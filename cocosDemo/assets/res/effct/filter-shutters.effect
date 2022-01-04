@@ -13,6 +13,7 @@ CCEffect %{
       properties:
         texture: { value: white }
         alphaThreshold: { value: 0.5 }
+        outTexture: { value: white ,editor: {tooltip: "变换纹理"}}
 }%
 
 
@@ -56,29 +57,33 @@ CCProgram fs %{
 
   #include <alpha-test>
   #include <texture>
+  #include <cc-global>
 
   in vec4 v_color;
 
   #if USE_TEXTURE
   in vec2 v_uv0;
   uniform sampler2D texture;
+  uniform sampler2D outTexture;
   #endif
 
+ float random(vec2 st) {
+      return fract(sin(dot(st.xy,vec2(12.9898, 78.233))) * 43758.5453123);
+  }
+
   void main () {
-    vec4 o = vec4(1, 1, 1, 1);
-
-    #if USE_TEXTURE
-      CCTexture(texture, v_uv0, o);
-    #endif
-
-    o *= v_color;
-
-    ALPHA_TEST(o);
-
-    #if USE_BGRA
-      gl_FragColor = o.bgra;
-    #else
-      gl_FragColor = o.rgba;
-    #endif
+    vec4 texColor1 = texture(texture, v_uv0);
+    vec4 texColor2 = texture(outTexture, v_uv0);
+  
+    vec4 resColor = vec4(cc_time.x,0.0,0.0,1.0);
+    vec2 gridNum = vec2(55.0,42.0);
+    float randomNum = random(floor(v_uv0.x * gridNum)/ gridNum);
+    float randomNum2 = random(floor(v_uv0.y * gridNum)/ gridNum);
+    if (cc_time.x <= randomNum )  //&& cc_time.x <= randomNum2
+        resColor = texColor1;
+    else
+        resColor = texColor2;
+        
+    gl_FragColor = resColor;
   }
 }%

@@ -1,0 +1,25 @@
+{
+  "__type__": "cc.Material",
+  "_name": "filter-shutters",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "c2638df6-f90e-421b-9e8e-006df191e4f8"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      },
+      "props": {
+        "texture": {
+          "__uuid__": "eb6fcbac-8edc-4f94-b47a-48018d737f27"
+        },
+        "outTexture": {
+          "__uuid__": "2d6e9fd7-fd33-464a-865e-7abfb0823f4d"
+        }
+      }
+    }
+  }
+}
