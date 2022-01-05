@@ -425,6 +425,9 @@
       },
       {
         "__uuid__": "6cfa8b6d-bea8-4a8f-a9c3-d0f68dcb837f"
+      },
+      {
+        "__uuid__": "0c3e68fb-e406-4e5d-b9b1-e813fd278f8c"
       }
     ],
     "mTexture1": {
@@ -963,7 +966,7 @@
       "ctor": "Float64Array",
       "array": [
         76.389,
-        -246.143,
+        -247.008,
         0,
         0,
         0,

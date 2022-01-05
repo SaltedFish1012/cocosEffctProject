@@ -8,7 +8,8 @@ enum RenderType {
     ToPush,
     ToShutters,
     ToMerge,
-    ToWipe
+    ToWipe,
+    ToRotate,
 }
 
 const { ccclass, property } = cc._decorator;
@@ -28,7 +29,7 @@ export default class NewClass extends cc.Component {
     mLabel: cc.Label = null;
 
     _mRenderType: RenderType = RenderType.ToScale;
-    _mEffctName: string[] = ['缩放', '推入', '百叶窗','融入', '擦除'];
+    _mEffctName: string[] = ['缩放', '推入', '百叶窗','融入', '擦除', '旋转'];
 
     protected onLoad(): void {
         this.scheduleOnce(() => { this.setChangeView(); }, 1);
