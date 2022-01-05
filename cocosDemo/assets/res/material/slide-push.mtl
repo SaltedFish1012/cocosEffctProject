@@ -1,0 +1,18 @@
+{
+  "__type__": "cc.Material",
+  "_name": "slide-push",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "f9868639-d304-4236-9702-14115b485443"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      },
+      "props": {}
+    }
+  }
+}

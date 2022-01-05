@@ -1,0 +1,18 @@
+{
+  "__type__": "cc.Material",
+  "_name": "filter-scale",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "102b1223-c1cb-4589-8420-8382a25ecccc"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      },
+      "props": {}
+    }
+  }
+}

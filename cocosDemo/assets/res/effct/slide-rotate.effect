@@ -1,0 +1,99 @@
+// Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
+
+CCEffect %{
+  techniques:
+  - passes:
+    - vert: vs
+      frag: fs
+      blendState:
+        targets:
+        - blend: true
+      rasterizerState:
+        cullMode: none
+      properties:
+        texture: { value: white }
+        alphaThreshold: { value: 0.5 }
+        outTexture: { value: white ,editor: {tooltip: "变换纹理"}}
+}%
+
+
+CCProgram vs %{
+  precision highp float;
+
+  #include <cc-global>
+  #include <cc-local>
+
+  in vec3 a_position;
+  in vec4 a_color;
+  out vec4 v_color;
+
+  #if USE_TEXTURE
+  in vec2 a_uv0;
+  out vec2 v_uv0;
+  #endif
+
+  void main () {
+    vec4 pos = vec4(a_position, 1);
+
+    #if CC_USE_MODEL
+    pos = cc_matViewProj * cc_matWorld * pos;
+    #else
+    pos = cc_matViewProj * pos;
+    #endif
+
+    #if USE_TEXTURE
+    v_uv0 = a_uv0;
+    #endif
+
+    v_color = a_color;
+
+    gl_Position = pos;
+  }
+}%
+
+
+CCProgram fs %{
+  precision highp float;
+
+  #include <alpha-test>
+  #include <texture>
+  #include <cc-global>
+
+  in vec4 v_color;
+
+  #if USE_TEXTURE
+  in vec2 v_uv0;
+  uniform sampler2D texture;
+  uniform sampler2D outTexture;
+  #endif
+
+  #define PI 3.1415926
+  vec2 transform(vec2 texCoord,float theta,float zOffset)
+  {
+    vec2 res = texCoord - 0.5;    // 从 (0.5,0.5) 移动到 (0,0)
+    // 执行旋转和投影（投影本质上是剪切）
+    res.x = res.x / cos(theta);
+    res.y = res.y / (1.0 - res.x * sin(theta));
+    res.x = res.x  / (1.0 - res.x * sin(theta));
+    res = res * (1.0 + zOffset);    // 执行 z 方向的位移，经过投影后，整体视作缩放
+    res = res + 0.5;    // 从 (0,0) 移动到 (0.5,0.5)
+    return res;
+  }
+
+  void main()
+  {
+    float t = abs(cos(cc_time.x));
+    // 图片在z方向上的偏移量
+    float zOffset = 0.2 - abs(0.4*t - 0.2);
+    vec2 texCoordAfterTransform = transform(v_uv0, t*PI, zOffset);
+	  vec4 resColor = vec4(t,0.0,0.0,1.0);
+    vec4 texColor1 = texture(texture, texCoordAfterTransform);
+    vec4 texColor2 = texture(outTexture, vec2(1.0 - texCoordAfterTransform.x, texCoordAfterTransform.y));
+    if (t <= 0.5)
+        resColor = texColor1;
+    else
+        resColor = texColor2;
+        
+    gl_FragColor = resColor;
+  }
+}%
