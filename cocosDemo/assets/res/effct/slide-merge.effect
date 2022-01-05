@@ -75,14 +75,16 @@ CCProgram fs %{
     vec4 texColor1 = texture(texture, v_uv0);
     vec4 texColor2 = texture(outTexture, v_uv0);
   
-    vec4 resColor = vec4(cc_time.x,0.0,0.0,1.0);
-    vec2 gridNum = vec2(55.0,42.0);
-    float randomNum = random(floor(v_uv0.x * gridNum)/ gridNum);
-    float randomNum2 = random(floor(v_uv0.y * gridNum)/ gridNum);
-    if (cc_time.x <= randomNum )  //&& cc_time.x <= randomNum2
-        resColor = texColor1;
-    else
-        resColor = texColor2;
+    float t = abs(cos(cc_time.x))*10.0;
+    vec4 resColor = vec4(0.0,0.0,0.0,1.0);
+
+    if (t < 10.){
+      float c = t/10.;
+      resColor = mix(texColor1, texColor2,c);
+    }else{
+      resColor = texColor2;
+    }
+    
         
     gl_FragColor = resColor;
   }

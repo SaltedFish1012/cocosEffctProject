@@ -14,8 +14,9 @@ CCEffect %{
         texture: { value: white }
         alphaThreshold: { value: 0.5 }
         outTexture: { value: white ,editor: {tooltip: "变换纹理"}}
+        
 }%
-
+//speedTime: { value: 0.5 ,editor: { tooltip: "速度"}}
 
 CCProgram vs %{
   precision highp float;
@@ -72,7 +73,7 @@ CCProgram fs %{
   void main () {
 
     vec4 resColor = vec4(0.0,0.0,0.0,1.0);
-    float R = 1.0 - cc_time.x;
+    float R = 1.0 - abs(cos(cc_time.x));
     if (v_uv0.x >= R)
       resColor = texture(texture, vec2(v_uv0.x - clamp(R,0.0,1.0), v_uv0.y));
     else

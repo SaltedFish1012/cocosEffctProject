@@ -333,7 +333,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 516,
+      "width": 534,
       "height": 300
     },
     "_anchorPoint": {
@@ -386,7 +386,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "41671ccc-d7a5-40b9-bb5b-fe14a129bf4a"
+      "__uuid__": "cd5e552a-89ec-4303-9bd4-c12998ce72ec"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -419,6 +419,12 @@
       },
       {
         "__uuid__": "2a4241c4-d0b7-491f-af3f-0b95d0409dbb"
+      },
+      {
+        "__uuid__": "32f664c6-4c13-4052-9892-fb22ec46f47d"
+      },
+      {
+        "__uuid__": "6cfa8b6d-bea8-4a8f-a9c3-d0f68dcb837f"
       }
     ],
     "mTexture1": {
@@ -426,6 +432,9 @@
     },
     "mTexture2": {
       "__uuid__": "2d6e9fd7-fd33-464a-865e-7abfb0823f4d"
+    },
+    "mTexture3": {
+      "__uuid__": "02f7dba0-a708-473a-9a03-958a42f1b6b2"
     },
     "mLabel": {
       "__id__": 9

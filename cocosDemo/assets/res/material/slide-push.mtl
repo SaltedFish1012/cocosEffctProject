@@ -1,6 +1,6 @@
 {
   "__type__": "cc.Material",
-  "_name": "filter-push",
+  "_name": "slide-push",
   "_objFlags": 0,
   "_native": "",
   "_effectAsset": {
@@ -12,14 +12,7 @@
       "defines": {
         "USE_TEXTURE": true
       },
-      "props": {
-        "texture": {
-          "__uuid__": "eb6fcbac-8edc-4f94-b47a-48018d737f27"
-        },
-        "outTexture": {
-          "__uuid__": "2d6e9fd7-fd33-464a-865e-7abfb0823f4d"
-        }
-      }
+      "props": {}
     }
   }
 }

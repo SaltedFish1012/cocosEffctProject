@@ -67,32 +67,24 @@ CCProgram fs %{
   uniform sampler2D outTexture;
   #endif
 
+ float random(vec2 st) {
+      return fract(sin(dot(st.xy,vec2(12.9898, 78.233))) * 43758.5453123);
+  }
+
   void main () {
-    // vec4 o = vec4(1, 1, 1, 1);
-
-    // #if USE_TEXTURE
-    //   CCTexture(texture, v_uv0, o);
-    // #endif
-
-    // o *= v_color;
-
-    // ALPHA_TEST(o);
-
-    // #if USE_BGRA
-    //   gl_FragColor = o.bgra;
-    // #else
-    //   gl_FragColor = o.rgba;
-    // #endif
-
-
     vec4 texColor1 = texture(texture, v_uv0);
     vec4 texColor2 = texture(outTexture, v_uv0);
   
-    float t = cc_time.x / 4.0;
-    if (v_uv0.y > t || v_uv0.x > t){
-      gl_FragColor = texColor1;
+    float t = abs(cos(cc_time.x));
+    vec4 resColor = vec4(1.0,0.98,0.99,0.2);
+
+    if (t > v_uv0.x){
+      resColor = mix(resColor,texColor2,t);
     }else{
-      gl_FragColor = texColor2;
+      resColor = mix(texColor1,resColor,t);
     }
+
+    
+    gl_FragColor = resColor;
   }
 }%

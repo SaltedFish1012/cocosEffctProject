@@ -1,12 +1,14 @@
 /**
  *  2021年10月12日
  *  @author zyh
- *  @param 滤镜效果
+ *  @param 幻灯片效果
  */
 enum RenderType {
     ToScale,
     ToPush,
-    ToShutters
+    ToShutters,
+    ToMerge,
+    ToWipe
 }
 
 const { ccclass, property } = cc._decorator;
@@ -20,11 +22,13 @@ export default class NewClass extends cc.Component {
     mTexture1: cc.Texture2D = null;
     @property(cc.Texture2D)
     mTexture2: cc.Texture2D = null;
+    @property(cc.Texture2D)
+    mTexture3: cc.Texture2D = null;
     @property(cc.Label)
     mLabel: cc.Label = null;
 
     _mRenderType: RenderType = RenderType.ToScale;
-    _mEffctName: string[] = ['缩放', '推入', '百叶窗',];
+    _mEffctName: string[] = ['缩放', '推入', '百叶窗','融入', '擦除'];
 
     protected onLoad(): void {
         this.scheduleOnce(() => { this.setChangeView(); }, 1);
@@ -37,9 +41,7 @@ export default class NewClass extends cc.Component {
             let renderComponent = element.getComponents(cc.RenderComponent);
             renderComponent[0].setMaterial(0, this.mEff_ChangeView[this._mRenderType]);
             let material: cc.Material = renderComponent[0].getMaterial(0);
-            //material = this.mEff_ChangeView;
             
-            material.setProperty('texture', this.mTexture1);
             material.setProperty('outTexture', this.mTexture2);
         });
     }
@@ -49,6 +51,7 @@ export default class NewClass extends cc.Component {
             this._mRenderType -= 1;
             this.setChangeView();
             this.mLabel.string = this._mEffctName[this._mRenderType];
+            
         } else {
             console.log('已经到顶了');
         }
