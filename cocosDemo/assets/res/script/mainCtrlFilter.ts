@@ -26,7 +26,7 @@ export default class NewClass extends cc.Component {
     mLabel: cc.Label = null;
 
     _mRenderType: RenderType = RenderType.ToScale;
-    _mEffctName: string[] = ['黑白', '底片'];
+    _mEffctName: string[] = ['正常','黑白', '底片', '马赛克'];
 
     protected onLoad(): void {
         this.scheduleOnce(() => { this.setChangeView(); }, 1);
@@ -37,6 +37,7 @@ export default class NewClass extends cc.Component {
         this.node.children.forEach(element => {
 
             let renderComponent = element.getComponents(cc.RenderComponent);
+            
             renderComponent[0].setMaterial(0, this.mEff_ChangeView[this._mRenderType]);
             let material: cc.Material = renderComponent[0].getMaterial(0);
             

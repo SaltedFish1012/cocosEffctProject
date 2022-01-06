@@ -330,8 +330,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 516,
-      "height": 300
+      "width": 430,
+      "height": 430
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -377,13 +377,13 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "eef180b8-064d-4cf0-8d56-3531f95fb2a8"
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "41671ccc-d7a5-40b9-bb5b-fe14a129bf4a"
+      "__uuid__": "755e7d58-87e4-4d35-8320-e855b0f7972e"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -413,6 +413,12 @@
       },
       {
         "__uuid__": "101eb92b-90cc-45eb-972b-2ffcbd41d8d1"
+      },
+      {
+        "__uuid__": "9a8bbb55-fdca-47be-b8b5-c2d421a8b9df"
+      },
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
     "mTexture1": null,
@@ -436,8 +442,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Label",
-    "_N$string": "Label",
+    "_string": "让我们面对现实，让我们忠于理想",
+    "_N$string": "让我们面对现实，让我们忠于理想",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -479,7 +485,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 97.87,
+      "width": 600,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -492,7 +498,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        245.881,
+        254.24,
         0,
         0,
         0,
@@ -757,9 +763,7 @@
     "root": {
       "__id__": 11
     },
-    "asset": {
-      "__uuid__": "9925165c-b7ae-497a-9d1d-b6795aabf492"
-    },
+    "asset": null,
     "fileId": "74kwTSje9Eu7/HuPP6NGCH",
     "sync": false
   },
@@ -827,9 +831,7 @@
     "root": {
       "__id__": 11
     },
-    "asset": {
-      "__uuid__": "9925165c-b7ae-497a-9d1d-b6795aabf492"
-    },
+    "asset": null,
     "fileId": "2e2wZueoNAbq81t21GFAbv",
     "sync": false
   },
@@ -934,9 +936,7 @@
     "root": {
       "__id__": 11
     },
-    "asset": {
-      "__uuid__": "9925165c-b7ae-497a-9d1d-b6795aabf492"
-    },
+    "asset": null,
     "fileId": "",
     "sync": false
   },
@@ -1181,9 +1181,7 @@
     "root": {
       "__id__": 22
     },
-    "asset": {
-      "__uuid__": "0194cdcf-90de-4468-b6ba-6f31e58e901f"
-    },
+    "asset": null,
     "fileId": "909fkEgPdMpbBkMSA84DhZ",
     "sync": false
   },
@@ -1251,9 +1249,7 @@
     "root": {
       "__id__": 22
     },
-    "asset": {
-      "__uuid__": "0194cdcf-90de-4468-b6ba-6f31e58e901f"
-    },
+    "asset": null,
     "fileId": "beHEro9s1HmY+Dxci0qaw0",
     "sync": false
   },
@@ -1358,9 +1354,7 @@
     "root": {
       "__id__": 22
     },
-    "asset": {
-      "__uuid__": "0194cdcf-90de-4468-b6ba-6f31e58e901f"
-    },
+    "asset": null,
     "fileId": "",
     "sync": false
   },

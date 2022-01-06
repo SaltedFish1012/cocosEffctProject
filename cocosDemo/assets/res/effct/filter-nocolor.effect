@@ -75,7 +75,6 @@ CCProgram fs %{
     #endif
     o *= v_color;
     o = vec4(o.b,o.b,o.b,1.0);
-    
     gl_FragColor = o;
   }
 }%
