@@ -10,14 +10,21 @@
 
 # 三丶效果预览
 
-//todo gif怎么搞
-
 * PPT切换-缩放  
-  ![tt](https://github.com/SaltedFish1012/MyMakedownImage/blob/main/git/1.gif?raw=true)
-
+  ![tt](https://github.com/SaltedFish1012/MyMakedownImage/blob/main/gif/1.gif?raw=true)
+* PPT切换-推入 
+  ![tt](https://github.com/SaltedFish1012/MyMakedownImage/blob/main/gif/2.gif?raw=true)
+* PPT切换-百叶窗  
+  ![tt](https://github.com/SaltedFish1012/MyMakedownImage/blob/main/gif/3.gif?raw=true)
+* PPT切换-融入  
+  ![tt](https://github.com/SaltedFish1012/MyMakedownImage/blob/main/gif/4.gif?raw=true)
+* PPT切换-擦除  
+  ![tt](https://github.com/SaltedFish1012/MyMakedownImage/blob/main/gif/5.gif?raw=true)
+* PPT切换-3D旋转  
+  ![tt](https://github.com/SaltedFish1012/MyMakedownImage/blob/main/gif/6.gif?raw=true)
 # 四丶待办事项&计划
 
-* [ ] 完成10个以上PPT切换效果
+* [ ] 完成5个以上PPT切换效果
 * [ ] 完成5个以上滤镜效果
 * [ ] 水波浪
 * [ ] 3D摸牌
