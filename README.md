@@ -12,7 +12,7 @@
 
 * PPT切换-缩放  
   ![tt](https://github.com/SaltedFish1012/MyMakedownImage/blob/main/gif/1.gif?raw=true)
-* PPT切换-推入 
+* PPT切换-推入  
   ![tt](https://github.com/SaltedFish1012/MyMakedownImage/blob/main/gif/2.gif?raw=true)
 * PPT切换-百叶窗  
   ![tt](https://github.com/SaltedFish1012/MyMakedownImage/blob/main/gif/3.gif?raw=true)
