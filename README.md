@@ -13,7 +13,7 @@
 //todo gif怎么搞
 
 * PPT切换-缩放  
-  ![tt] (<https://github.com/SaltedFish1012/MyMakedownImage/blob/main/git/1.gif?raw=true>)
+  ![tt](https://github.com/SaltedFish1012/MyMakedownImage/blob/main/git/1.gif?raw=true)
 
 # 四丶待办事项&计划
 
