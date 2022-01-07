@@ -1,0 +1,17 @@
+{
+  "__type__": "cc.Material",
+  "_name": "filter-gray",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "e640a088-ffd3-468e-843f-00c2a2d0f993"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      }
+    }
+  }
+}
