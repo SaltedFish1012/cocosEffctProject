@@ -1,0 +1,118 @@
+// Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
+
+CCEffect %{
+  techniques:
+  - passes:
+    - vert: vs
+      frag: fs
+      blendState:
+        targets:
+        - blend: true
+      rasterizerState:
+        cullMode: none
+      properties:
+        texture: { value: white }
+        alphaThreshold: { value: 0.5 }
+}%
+
+
+CCProgram vs %{
+  precision highp float;
+
+  #include <cc-global>
+  #include <cc-local>
+
+  in vec3 a_position;
+  in vec4 a_color;
+  out vec4 v_color;
+
+  #if USE_TEXTURE
+  in vec2 a_uv0;
+  out vec2 v_uv0;
+  #endif
+
+  void main () {
+    vec4 pos = vec4(a_position, 1);
+
+    #if CC_USE_MODEL
+    pos = cc_matViewProj * cc_matWorld * pos;
+    #else
+    pos = cc_matViewProj * pos;
+    #endif
+
+    #if USE_TEXTURE
+    v_uv0 = a_uv0;
+    #endif
+
+    v_color = a_color;
+
+    gl_Position = pos;
+  }
+}%
+
+
+CCProgram fs %{
+  precision highp float;
+
+  #include <alpha-test>
+  #include <texture>
+  #include <cc-global>
+
+  in vec4 v_color;
+
+  #if USE_TEXTURE
+  in vec2 v_uv0;
+  uniform sampler2D texture;
+  #endif
+
+  float width = 0.2;
+  float strength = 0.1;
+  float offset = 0.1;
+  float speed = 0.8;
+  vec4  colorr = vec4(0,1.,1.,1.);
+  float distancee = 1.5;
+
+
+  void main () {
+    vec4 o = vec4(1.,1.,1.,1.);
+    //点
+    if (0.4 < v_uv0.x && v_uv0.x <0.6 && 0.4<v_uv0.y && v_uv0.y<0.6 ){
+      o = vec4(1.,0,0,1);
+    }
+
+    // 线
+    if( v_uv0.y + 0.1 > 0.5* v_uv0.x  && v_uv0.y -0.1  < 0.5* v_uv0.x ){
+      o = vec4(0.,1,0,1);
+    }
+
+   
+
+  // 运动的线
+    float kuang = 0.03;
+    float t = 2.0*sin(cc_time.x) - 1.0;
+    if( v_uv0.y + kuang > 0.5* v_uv0.x + t  && v_uv0.y - kuang  <  0.5* v_uv0.x +t ){
+      o = vec4(0.,0,1,1);
+    }
+
+    #if USE_TEXTURE
+      CCTexture(texture, v_uv0, o);
+    #endif
+
+
+    gl_FragColor = o;
+
+
+    // vec4 color = vec4(1,1,1,1);
+    // color *= texture(texture, v_uv0);
+
+    // float k = offset;
+    // float time_step = -width;
+    // time_step += mod(cc_time.x, distancee + 0.2 * width)/speed;
+
+    // if (v_uv0.x >= -v_uv0.y * k + time_step && v_uv0.x <= -v_uv0.y * k + width + time_step ) {
+    //   color *= strength;
+    // }
+
+    // gl_FragColor = color;
+  }
+}%

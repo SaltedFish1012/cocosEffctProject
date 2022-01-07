@@ -8,6 +8,8 @@
 
 # 二丶 文章详解
 
+1. [cocos shader & Glsl 入门（一）](https://www.jianshu.com/p/d80298a4f735)
+
 # 三丶效果预览
 
 * PPT切换-缩放  
