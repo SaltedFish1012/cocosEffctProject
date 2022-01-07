@@ -67,10 +67,10 @@ CCProgram fs %{
   #endif
 
   void main () {
-    float x = floor(v_uv0.x*30.0)/30.0; 
-    float y = floor(v_uv0.y*30.0)/30.0;
+    float x = floor(v_uv0.x*100.0)/100.0; 
+    float y = floor(v_uv0.y*100.0)/100.0;
     vec4 mask = texture2D(texture, vec2(x,y));
-    mask *= v_color;
+    //mask *= v_color;
     gl_FragColor = mask;
   }
 }%
