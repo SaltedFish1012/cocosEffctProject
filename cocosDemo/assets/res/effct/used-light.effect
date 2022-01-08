@@ -76,14 +76,14 @@ CCProgram fs %{
   void main () {
     vec4 o = vec4(1.,1.,1.,1.);
     //点
-    if (0.4 < v_uv0.x && v_uv0.x <0.6 && 0.4<v_uv0.y && v_uv0.y<0.6 ){
-      o = vec4(1.,0,0,1);
-    }
+    // if (0.4 < v_uv0.x && v_uv0.x <0.6 && 0.4<v_uv0.y && v_uv0.y<0.6 ){
+    //   o = vec4(1.,0,0,1);
+    // }
 
     // 线
-    if( v_uv0.y + 0.1 > 0.5* v_uv0.x  && v_uv0.y -0.1  < 0.5* v_uv0.x ){
-      o = vec4(0.,1,0,1);
-    }
+    // if( v_uv0.y + 0.1 > 0.5* v_uv0.x  && v_uv0.y -0.1  < 0.5* v_uv0.x ){
+    //   o = vec4(0.,1,0,1);
+    // }
 
    
 
@@ -102,17 +102,5 @@ CCProgram fs %{
     gl_FragColor = o;
 
 
-    // vec4 color = vec4(1,1,1,1);
-    // color *= texture(texture, v_uv0);
-
-    // float k = offset;
-    // float time_step = -width;
-    // time_step += mod(cc_time.x, distancee + 0.2 * width)/speed;
-
-    // if (v_uv0.x >= -v_uv0.y * k + time_step && v_uv0.x <= -v_uv0.y * k + width + time_step ) {
-    //   color *= strength;
-    // }
-
-    // gl_FragColor = color;
   }
 }%
