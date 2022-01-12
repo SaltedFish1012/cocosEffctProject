@@ -1,0 +1,24 @@
+{
+  "__type__": "cc.Material",
+  "_name": "used-card",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "ee05d98f-f95a-4087-acb2-50e5c8a5fb2b"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      },
+      "props": {
+        "K": 0.9,
+        "B": 0.1,
+        "outTexture": {
+          "__uuid__": "2d6e9fd7-fd33-464a-865e-7abfb0823f4d"
+        }
+      }
+    }
+  }
+}
